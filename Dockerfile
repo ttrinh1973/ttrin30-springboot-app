@@ -1,9 +1,14 @@
-FROM openjdk:17-jdk-slim
+# Use stable Java 17 (required for D387)
+FROM eclipse-temurin:17-jdk
 
-LABEL authors="Toan Trinh"
+# Set working directory inside container
+WORKDIR /app
 
-COPY target/D387_sample_code-0.0.2-SNAPSHOT.jar /app/myApp.jar
+# Copy the Spring Boot JAR into the container
+COPY target/*.jar app.jar
 
+# Expose Spring Boot port
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app/myApp.jar"]
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]

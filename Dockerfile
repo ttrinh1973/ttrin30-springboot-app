@@ -1,3 +1,4 @@
-FROM openjdk:17
-COPY target/D387_sample_code-0.0.2-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]

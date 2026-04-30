@@ -90,7 +90,7 @@
 			<groupId>org.codehaus.mojo</groupId>
 			<artifactId>exec-maven-plugin</artifactId>
 			<version>1.6.0</version>
-			<executions>
+			<!--<executions>
 				<execution>
 					<phase>validate</phase>
 					<goals>
@@ -98,6 +98,7 @@
 					</goals>
 				</execution>
 			</executions>
+			-->
 			<configuration>
 				<executable>ng</executable>
 				<workingDirectory>src/main/UI</workingDirectory>
